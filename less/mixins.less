@@ -1,1 +1,39 @@
 // Mixins in here
+
+.dashed-line() {
+    border-top: 2px dashed #a5a4a5;
+}
+
+.custom-button() {
+    background-color: lightsteelblue;
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    color: whitesmoke;
+    .center();
+
+    &:hover {
+        .popout {
+            animation: popout 1s ease;
+            -webkit-animation: popout 1s ease;
+        }
+        @keyframes popout {
+            from{transform:scale(0)}
+            80%{transform:scale(1.2)}
+            to{transform:scale(1)}
+        }
+        @-webkit-keyframes popout {
+            from{-webkit-transform:scale(0)}
+            80%{-webkit-transform:scale(1.2)}
+            to{-webkit-transform:scale(1)}
+        }
+    }
+}//button end
+
+.center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}//center end
